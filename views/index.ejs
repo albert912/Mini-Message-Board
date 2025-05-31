@@ -1,0 +1,28 @@
+<html>
+<body>
+
+
+<%
+  for (let i = 0; i < messages.length; i++) {
+    let msg = messages[i];
+    let keys = Object.keys(msg);
+    for (let j = 0; j < keys.length; j++) {
+      let key = keys[j];
+%>
+<p><%= key %>: <%= msg[key] %></p>
+<%
+    }
+%>
+%>
+<!-- Add this line: link to open details page -->
+<a href="/messages/<%= i %>">open</a>
+<br><br>
+<%
+  }
+%>
+    
+    <p><a href="/messages/new">Add a New Message</a></p>
+
+
+</body>
+</html>
