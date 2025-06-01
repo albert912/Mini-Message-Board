@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
 });
 
 
-const port = process.env.PORT || 3000; // Use the PORT environment variable provided by Koyeb
+const port = process.env.PORT || 3000; 
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`); // Changed console log for clarity
+  console.log(`Server is running on port ${port}`); 
 });
