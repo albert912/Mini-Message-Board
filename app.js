@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require("path"); 
+const path = require("path");
 const app = express();
 
 
@@ -19,7 +19,7 @@ const messages = [
     user: "Charles",
     added: new Date()
   }
-];  
+];
 
 app.locals.messages = messages;
 
@@ -27,13 +27,15 @@ app.locals.messages = messages;
 const router = require('./routes/router');
 
 app.use(express.urlencoded({ extended: false }));
-app.use('/messages', router); 
+app.use('/messages', router);
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
 
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+const port = process.env.PORT || 3000; // Use the PORT environment variable provided by Koyeb
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`); // Changed console log for clarity
 });
